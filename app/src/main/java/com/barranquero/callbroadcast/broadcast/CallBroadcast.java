@@ -36,11 +36,14 @@ public class CallBroadcast extends BroadcastReceiver {
                 builder.setContentTitle(context.getString(R.string.app_name));
                 builder.setContentText("Call from: " + number);
                 builder.setSmallIcon(android.R.drawable.ic_menu_call);
+                builder.setAutoCancel(true);
 
                 // Extra parameters
                 builder.setDefaults(NotificationCompat.DEFAULT_VIBRATE);
                 builder.setDefaults(NotificationCompat.DEFAULT_LIGHTS);
                 builder.setDefaults(NotificationCompat.DEFAULT_SOUND);
+                // Cancelling the notification when tapped on
+                //builder.setDefaults(NotificationCompat.FLAG_AUTO_CANCEL);
                 // Adding the Pending Intent to the notification
                 builder.setContentIntent(pendingIntent);
                 // Add notification to NotificationManager
